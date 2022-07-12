@@ -5,14 +5,16 @@ import styles from "./about.module.scss";
 import ButtonLink from "../components/shared/button-link";
 
 export type OrgRepoProps = {
-	id: number;
-	login: string;
-	html_url: string;
-	avatar_url: string;
-	description: string | null;
+	repo: {
+		id: number;
+		login: string;
+		url: string;
+		avatar_url: string;
+		description: string | null;
+	};
 };
 
-const About = ({ repo }: any) => {
+const About = ({ repo }: OrgRepoProps) => {
 	return (
 		<div className={""}>
 			<div className="tile is-child">
@@ -43,7 +45,8 @@ const About = ({ repo }: any) => {
 			</div>
 
 			<div className={`tile is-parent ${styles.showcase}`}>
-				{repo.map((rep: any) => {
+				{/* @ts-ignore */}
+				{repo.map((rep) => {
 					const repoUrl = "https://" + rep.url.substring(12);
 
 					return (

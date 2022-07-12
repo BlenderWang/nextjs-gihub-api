@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 const Navbar = () => {
+	const [isActive, setIsActive] = useState(false);
+
 	return (
 		<nav
 			className="navbar is-primary"
@@ -13,8 +15,13 @@ const Navbar = () => {
 					<a className="navbar-item">Github Repos 📦</a>
 				</Link>
 				<a
+					onClick={() => {
+						setIsActive(!isActive);
+					}}
 					role="button"
-					className="navbar-burger burger"
+					className={`navbar-burger burger ${
+						isActive ? "is-active" : ""
+					}`}
 					aria-label="menu"
 					aria-expanded="false"
 					data-target="navbarBasicExample"
@@ -25,7 +32,10 @@ const Navbar = () => {
 				</a>
 			</div>
 
-			<div className="navbar-menu">
+			<div
+				id="navbarBasicExample"
+				className={`navbar-menu ${isActive ? "is-active" : ""}`}
+			>
 				<div className="navbar-start">
 					<Link href="/">
 						<a className="navbar-item">Home</a>

@@ -38,8 +38,12 @@ function getProfile(username: string) {
 	return axios.get(`users/${username}`, axiosConfig);
 }
 
+function getOrganization() {
+	return axios.get(`organizations?since=17260&per_page=15`, axiosConfig);
+}
+
 function isServer() {
 	return typeof window === "undefined";
 }
 
-export { searchRepos, getRepo, getProfile };
+export { searchRepos, getRepo, getProfile, getOrganization };

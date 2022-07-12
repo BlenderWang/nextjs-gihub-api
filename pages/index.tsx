@@ -36,12 +36,16 @@ const Home = (props: BaseProps) => {
 
 	return (
 		<div className={styles.container}>
-			<Image
-				src="/img/hero-image.svg"
-				alt="placeholder-image"
-				width="500px"
-				height={"300px"}
-			/>
+			<div className="hero is-small">
+				<div className="hero-body">
+					<Image
+						src="/img/hero-image.svg"
+						alt="placeholder-image"
+						width="500px"
+						height={"300px"}
+					/>
+				</div>
+			</div>
 			<Search
 				searchText={searchText}
 				language={language}

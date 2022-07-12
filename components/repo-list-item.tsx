@@ -4,19 +4,9 @@ import { FaStar, FaCodeBranch, FaCode } from "react-icons/fa";
 import UserAvatar from "./user-avatar";
 import styles from "./repo-list-item.module.scss";
 
-export type RepoProps = {
-	repo: {
-		id: number | string;
-		name: string;
-		description: string;
-		stargazers_count?: number | string;
-		forks_count?: number;
-		language?: string;
-		owner?: string;
-	};
-};
+import { RepoListItemProps } from "../global/types";
 
-const RepoListItem = ({ repo }: RepoProps) => {
+const RepoListItem = ({ repo }: RepoListItemProps) => {
 	const cutDescription = (description: string) => {
 		if (description && description.length > 100) {
 			return description.slice(0, 100) + "...";

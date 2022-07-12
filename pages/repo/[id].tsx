@@ -3,22 +3,7 @@ import { getRepo } from "../../services/githubService";
 import styles from "./repo.module.scss";
 import ButtonLink from "../../components/shared/button-link";
 import UserAvatar from "../../components/user-avatar";
-
-type RepoProps = {
-	repo: {
-		name: string;
-		owner: string;
-		description: string;
-		language: string;
-		html_url: string;
-	};
-};
-
-export type QueryProps = {
-	query: {
-		id: number | string;
-	};
-};
+import { RepoProps, QueryProps } from "../../global/types";
 
 const Repo = ({ repo }: RepoProps) => {
 	return (
@@ -35,8 +20,7 @@ const Repo = ({ repo }: RepoProps) => {
 				<span>{repo.name}</span>
 			</div>
 
-			{/* @ts-ignore */}
-			<UserAvatar user={repo.owner}></UserAvatar>
+			<UserAvatar user={repo.owner} />
 			<div className={styles.description}>{repo.description}</div>
 			<div className={styles.language}>{repo.language}</div>
 

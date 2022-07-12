@@ -1,17 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import RepoListItem from "./repo-list-item";
+import { ListItemProps } from "../global/types";
 
 import styles from "./repo-list.module.scss";
 
-type RepoProps = {
-	id: number | string;
-	name: string;
-	description: string;
-};
-
 export type RepoListProps = {
-	repos: RepoProps[];
+	repos: ListItemProps[];
 	loading: boolean;
 };
 

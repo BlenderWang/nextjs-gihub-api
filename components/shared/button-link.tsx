@@ -25,7 +25,7 @@ const ButtonLink = ({
 	target,
 	external,
 }: ButtonLinkProps) => {
-	const types: any = {
+	const types: ButtonTypesProps | any = {
 		primary: "is-primary",
 		success: "is-success",
 		danger: "is-danger",

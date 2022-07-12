@@ -2,6 +2,7 @@ import React from "react";
 import { getProfile } from "../../services/githubService";
 import styles from "./profile.module.scss";
 import ButtonLink from "../../components/shared/button-link";
+import { QueryProps } from "../../global/types";
 
 type ProfileProps = {
 	profile: {
@@ -13,12 +14,6 @@ type ProfileProps = {
 		followers: number;
 		following: boolean;
 		html_url: string;
-	};
-};
-
-type QueryProps = {
-	query: {
-		id: string;
 	};
 };
 

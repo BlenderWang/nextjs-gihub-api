@@ -17,7 +17,7 @@ const axiosConfig: customAxiosConfigType | any = {
 	},
 };
 
-function searchRepos(searchText: string, language: string) {
+function searchRepos(searchText: string, language?: string) {
 	const query = language ? `${searchText}+language:${language}` : searchText;
 
 	if (isServer()) {
@@ -27,10 +27,7 @@ function searchRepos(searchText: string, language: string) {
 		);
 	}
 
-	return axiosGetCancellable(
-		`api/search?q=${query}&sort=stars&order=desc`
-		// axiosConfig
-	);
+	return axiosGetCancellable(`api/search?q=${query}&sort=stars&order=desc`);
 }
 
 function getRepo(id: number | string) {

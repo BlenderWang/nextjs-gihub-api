@@ -1,11 +1,5 @@
 import React from "react";
-
-export type SharedType = {
-	label: string;
-	value: string;
-	onChange: Function;
-	className: string;
-};
+import { SharedType } from "../../global/types";
 
 interface TextInputProps extends SharedType {
 	placeholder: string;

@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { searchRepos } from "../services/githubService";
 import Search from "../components/search";
-import RepoList, { RepoListProps } from "../components/repo-list";
+import RepoList from "../components/repo-list";
 import { getRandomWord } from "../utils/randomWord";
 import styles from "./index.module.scss";
+import { BaseProps } from "../global/types";
 
-const Home = (props: any) => {
-	// const [joke, setJoke] = useState("");
-
+const Home = (props: BaseProps) => {
 	const [searchText, setSearchText] = useState(props.searchText);
 	const [language, setLanguage] = useState("");
 	const [repos, setRepos] = useState(props.repos);
@@ -35,16 +34,6 @@ const Home = (props: any) => {
 		}
 	};
 
-	/* useEffect(() => {
-		getJoke();
-	}, []);
-
-	const getJoke = async () => {
-		const res = await axios.get("https://api.chucknorris.io/jokes/random");
-
-		setJoke(res.data.value);
-	}; */
-
 	return (
 		<div className={styles.container}>
 			<Image
@@ -61,10 +50,6 @@ const Home = (props: any) => {
 			/>
 			{/* @ts-ignore */}
 			<RepoList loading={loading} repos={repos} />
-			{/* <h1>Hello from Next js</h1>
-			<p>Description of the page</p>
-			<p>Value CSR: {joke}</p>
-			<p>Value SSR: {value}</p> */}
 		</div>
 	);
 };
@@ -73,20 +58,12 @@ export default Home;
 
 export const getServerSideProps = async () => {
 	const searchText = getRandomWord();
-	/* @ts-ignore */
-	const res = await searchRepos(searchText);
+	const res: any = await searchRepos(searchText);
 
 	return {
 		props: {
 			searchText: searchText,
-			repos: res?.data.items,
+			repos: res.data.items,
 		},
 	};
-
-	// const res = await axios.get("https://api.chucknorris.io/jokes/random");
-	// return {
-	// 	props: {
-	// 		value: res.data.value,
-	// 	},
-	// };
 };

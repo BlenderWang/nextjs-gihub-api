@@ -1,5 +1,5 @@
 import React from "react";
-import { SharedType } from "./text-input";
+import { SharedType } from "../../global/types";
 
 interface OptionProps extends SharedType {
 	option: {

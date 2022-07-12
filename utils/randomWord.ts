@@ -1,5 +1,5 @@
 function getRandomWord() {
-	const words = ["mario", "unicorn", "pizza", "penguin"];
+	const words = ["tailwind", "redis", "tesla", "penutbutter"];
 	return words[Math.floor(Math.random() * words.length)];
 }
 

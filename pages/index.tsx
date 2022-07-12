@@ -37,7 +37,7 @@ const Home = (props: BaseProps) => {
 	return (
 		<div className={styles.container}>
 			<Image
-				src="/img/study.svg"
+				src="/img/hero-image.svg"
 				alt="placeholder-image"
 				width="500px"
 				height={"300px"}

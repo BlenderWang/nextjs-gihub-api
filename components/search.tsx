@@ -24,7 +24,7 @@ const Search = ({
 			<TextInput
 				label="Repo Search"
 				value={searchText}
-				onChange={(value: any) => onSearchTextChange(value)}
+				onChange={(value: string) => onSearchTextChange(value)}
 				placeholder={""}
 				className={styles.searchInput}
 			/>

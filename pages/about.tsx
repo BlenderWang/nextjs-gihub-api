@@ -20,21 +20,17 @@ const About = ({ repo }: OrgRepoProps) => {
 			<div className="tile is-child">
 				<p className="title">About this project</p>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Etiam semper diam at erat pulvinar, at pulvinar felis
-					blandit. Vestibulum volutpat tellus diam, consequat gravida
-					libero rhoncus ut. Morbi maximus, leo sit amet vehicula
-					eleifend, nunc dui porta orci, quis semper odio felis ut
-					quam.
+					This is a web app made with Nextjs, Bulma CSS and Typescript
+					and deployed on Vercel. It has also incorporated GitHub API
+					for search functionality based on username, repository
+					and/or organization and etc.
 				</p>
 				<p>
-					Suspendisse varius ligula in molestie lacinia. Maecenas
-					varius eget ligula a sagittis. Pellentesque interdum, nisl
-					nec interdum maximus, augue diam porttitor lorem, et
-					sollicitudin felis neque sit amet erat. Maecenas imperdiet
-					felis nisi, fringilla luctus felis hendrerit sit amet.
-					Aenean vitae gravida diam, finibus dignissim turpis. Sed
-					eget varius ligula, at volutpat tortor.
+					The purpose of this project is to practice working with API
+					as well as strengthen my Javascript skills together with
+					Typescript. In the meantime, I would also like to explore
+					more CSS framework. In this case, Bulma CSS has been
+					implemented.
 				</p>
 			</div>
 

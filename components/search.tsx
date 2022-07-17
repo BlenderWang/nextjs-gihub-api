@@ -32,7 +32,7 @@ const Search = ({
 				className={styles.languageSelect}
 				label="Language"
 				value={language}
-				/* @ts-ignore */
+				// @ts-ignore
 				options={languages}
 				onChange={(value: string) => onLanguageChange(value)}
 			/>

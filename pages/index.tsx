@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useSearchContext } from "../context/AppContext";
 import { searchRepos } from "../services/githubService";
 import Search from "../components/search";
 import RepoList from "../components/repo-list";
@@ -8,20 +9,21 @@ import styles from "./index.module.scss";
 import { BaseProps } from "../global/types";
 
 const Home = (props: BaseProps) => {
-	const [searchText, setSearchText] = useState(props.searchText);
-	const [language, setLanguage] = useState("");
+	const { searchText, searchTextChange, language, languageChange } =
+		useSearchContext();
+
 	const [repos, setRepos] = useState(props.repos);
 	const [loading, setLoading] = useState(false);
 
 	const onSearchTextChange = (text: string) => {
-		setSearchText(text);
+		searchTextChange(text);
 		if (text) {
 			loadRepos(text, language);
 		}
 	};
 
 	const onLanguageChange = (language: string) => {
-		setLanguage(language);
+		languageChange(language);
 		loadRepos(searchText, language);
 	};
 
